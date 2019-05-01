@@ -23,6 +23,7 @@ namespace RPSLS
             while (validChoice == false)
             { 
                 Console.WriteLine($"{name}, choose a gesture: rock/paper/scissors/lizard/spock");
+                Console.ForegroundColor = ConsoleColor.Black;
                 myChoice = Console.ReadLine().ToLower();
                 switch (myChoice)
                 {
@@ -42,10 +43,12 @@ namespace RPSLS
                         validChoice = true;
                         break;
                     default:
+                        Console.ForegroundColor = ConsoleColor.White;
                         Console.WriteLine("Try again.");
                         break;
                 }
             }
+            Console.ForegroundColor = ConsoleColor.White;
             return myChoice;
         }
     }

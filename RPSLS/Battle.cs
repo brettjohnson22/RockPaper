@@ -40,14 +40,12 @@ namespace RPSLS
             {
                 if (gesture2 == "scissors" || gesture2 == "lizard")
                 {
-                    Console.WriteLine($"{firstPlayer.name} wins!");
-                    Console.ReadLine();
+                    Console.WriteLine($"{gesture1} beats {gesture2}. {firstPlayer.name} wins the round!");
                     firstPlayer.playerScore++;
                 }
                 else
                 {
-                    Console.WriteLine($"{secondPlayer.name} wins!");
-                    Console.ReadLine();
+                    Console.WriteLine($"{gesture2} beats {gesture1}. {secondPlayer.name} wins the round!");
                     secondPlayer.playerScore++;
                 }
             }
@@ -55,12 +53,12 @@ namespace RPSLS
             {
                 if (gesture2 == "rock" || gesture2 == "spock")
                 {
-                    Console.WriteLine($"{firstPlayer.name} wins!");
+                    Console.WriteLine($"{gesture1} beats {gesture2}. {firstPlayer.name} wins the round!");
                     firstPlayer.playerScore++;
                 }
                 else
                 {
-                    Console.WriteLine($"{secondPlayer.name} wins!");
+                    Console.WriteLine($"{gesture2} beats {gesture1}. {secondPlayer.name} wins the round!");
                     secondPlayer.playerScore++;
                 }
             }
@@ -68,12 +66,12 @@ namespace RPSLS
             {
                 if (gesture2 == "paper" || gesture2 == "lizard")
                 {
-                    Console.WriteLine($"{firstPlayer.name} wins!");
+                    Console.WriteLine($"{gesture1} beats {gesture2}. {firstPlayer.name} wins the round!");
                     firstPlayer.playerScore++;
                 }
                 else
                 {
-                    Console.WriteLine($"{secondPlayer.name} wins!");
+                    Console.WriteLine($"{gesture2} beats {gesture1}. {secondPlayer.name} wins the round!");
                     secondPlayer.playerScore++;
                 }
             }
@@ -81,12 +79,12 @@ namespace RPSLS
             {
                 if (gesture2 == "paper" || gesture2 == "spock")
                 {
-                    Console.WriteLine($"{firstPlayer.name} wins!");
+                    Console.WriteLine($"{gesture1} beats {gesture2}. {firstPlayer.name} wins the round!");
                     firstPlayer.playerScore++;
                 }
                 else
                 {
-                    Console.WriteLine($"{secondPlayer.name} wins!");
+                    Console.WriteLine($"{gesture2} beats {gesture1}. {secondPlayer.name} wins the round!");
                     secondPlayer.playerScore++;
                 }
             }
@@ -94,12 +92,12 @@ namespace RPSLS
             {
                 if (gesture2 == "scissors" || gesture2 == "rock")
                 {
-                    Console.WriteLine($"{firstPlayer.name} wins!");
+                    Console.WriteLine($"{gesture1} beats {gesture2}. {firstPlayer.name} wins the round!");
                     firstPlayer.playerScore++;
                 }
                 else
                 {
-                    Console.WriteLine($"{secondPlayer.name} wins!");
+                    Console.WriteLine($"{gesture2} beats {gesture1}. {secondPlayer.name} wins the round!");
                     secondPlayer.playerScore++;
                 }
             }

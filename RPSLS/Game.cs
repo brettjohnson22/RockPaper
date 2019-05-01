@@ -28,6 +28,7 @@ namespace RPSLS
             do
             {
                 RunBattle();
+                Console.WriteLine($"{firstPlayer.name}: {firstPlayer.playerScore}. {secondPlayer.name}: {secondPlayer.playerScore}");
             }
             while (firstPlayer.playerScore < 2 && secondPlayer.playerScore < 2);
             GameOver();
