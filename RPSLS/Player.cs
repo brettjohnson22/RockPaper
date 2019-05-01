@@ -10,7 +10,8 @@ namespace RPSLS
     {
         //member variables (HAS A)
         public string name;
-        public Gesture myChoice;
+        public string myChoice;
+        public string fist;
         public int playerScore;
 
         //constructor (SPAWNER)
@@ -22,6 +23,9 @@ namespace RPSLS
         //Return gesture to battle.
         //Accept new score from battle?
         //Give score to Game to determine winner.
-        public string 
+        public string throwGesture()
+        {
+            return fist;
+        }
     }
 }

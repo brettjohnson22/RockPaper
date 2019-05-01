@@ -9,10 +9,10 @@ namespace RPSLS
     public class Battle
     {
         //member variables (HAS A)
-        public Player playerOne;
-        public Player playerTwo;
-        public Gesture gesture1;
-        public Gesture gesture2;
+        public Player firstPlayer;
+        public Player secondPlayer;
+        string gesture1;
+        string gesture2;
 
         //constructor (SPAWNER)
         public Battle()
@@ -27,8 +27,9 @@ namespace RPSLS
 
         public void PromptGestures()
         {
-            Console.WriteLine($"{playerOne.name} please enter your gesture: rock/paper/scissors/lizard/spock");
-            Console.ReadLine();
+            Console.WriteLine($"{firstPlayer.name} please enter your gesture: rock/paper/scissors/lizard/spock");
+            gesture1 = Console.ReadLine();
+            Console.WriteLine($"{secondPlayer.name} please enter your gesture: rock/paper/scissors/lizard/spock);
         }
 
         //public judgeGestures()

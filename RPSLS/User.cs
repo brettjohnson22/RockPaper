@@ -9,14 +9,44 @@ namespace RPSLS
     public class User : Player
     {
         //member variables (HAS A)
-        
+        public bool validChoice;
         //constructor (SPAWNER)
         public User(string name)
         {
             this.name = name;
+            this.validChoice = false;
         }
         //member methods (CAN DO)
         //Choose a gesture from user prompt.
-
+        public string chooseGesture()
+        {
+            while (validChoice == false)
+            { 
+                Console.WriteLine("Which gesture do you choose? rock/paper/scissors/lizard/spock");
+                string myChoice = Console.ReadLine().ToLower();
+                switch (myChoice)
+                {
+                    case "rock":
+                        validChoice = true;
+                        break;
+                    case "paper":
+                        validChoice = true;
+                        break;
+                    case "scissors":
+                        validChoice = true;
+                        break;
+                    case "lizard":
+                        validChoice = true;
+                        break;
+                    case "spock":
+                        validChoice = true;
+                        break;
+                    default:
+                        Console.WriteLine("Try again.");
+                        break;
+                }
+            }
+            return myChoice;
+        }
     }
 }
