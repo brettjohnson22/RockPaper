@@ -30,6 +30,7 @@ namespace RPSLS
                 RunBattle();
             }
             while (firstPlayer.playerScore < 2 && secondPlayer.playerScore < 2);
+            GameOver();
 
         }
         //member methods (CAN DO)
@@ -79,7 +80,7 @@ namespace RPSLS
 
         public void RunBattle()
         {
-            Battle roundOne = new Battle(firstPlayer, secondPlayer);
+            roundOne = new Battle(firstPlayer, secondPlayer);
         }
 
         public void GameOver()

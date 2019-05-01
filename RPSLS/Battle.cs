@@ -24,11 +24,6 @@ namespace RPSLS
             JudgeGestures();
         }
         //member methods (CAN DO)
-        //Compare two gestures and determine a winner.
-        //Reprompt players in event of a draw.
-        //Feed score to winner.
-        //Tell game to trigger next round?
-
         public void PromptGestures()
         {
             gesture1 = firstPlayer.ChooseGesture();

@@ -14,12 +14,12 @@ namespace RPSLS
         public User(string name)
         {
             this.name = name;
-            validChoice = false;
         }
         //member methods (CAN DO)
         //Choose a gesture from user prompt.
         public override string ChooseGesture()
         {
+            validChoice = false;
             while (validChoice == false)
             { 
                 Console.WriteLine($"{name}, choose a gesture: rock/paper/scissors/lizard/spock");
