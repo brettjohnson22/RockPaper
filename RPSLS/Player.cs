@@ -16,13 +16,13 @@ namespace RPSLS
         //constructor (SPAWNER)
         public Player()
         {
-                
+            playerScore = 0;
         }
         //member methods (CAN DO)
         //Return gesture to battle.
         //Accept new score from battle?
         //Give score to Game to determine winner.
-        public abstract string chooseGesture();
+        public abstract string ChooseGesture();
         
     }
 }

@@ -18,7 +18,7 @@ namespace RPSLS
         }
         //member methods (CAN DO)
         //Choose a gesture at random from a list of possible gestures.
-        public override string chooseGesture()
+        public override string ChooseGesture()
         {
             throw new NotImplementedException();
         }

@@ -18,12 +18,12 @@ namespace RPSLS
         }
         //member methods (CAN DO)
         //Choose a gesture from user prompt.
-        public override string chooseGesture()
+        public override string ChooseGesture()
         {
             while (validChoice == false)
             { 
                 Console.WriteLine($"{name}, choose a gesture: rock/paper/scissors/lizard/spock");
-                string myChoice = Console.ReadLine().ToLower();
+                myChoice = Console.ReadLine().ToLower();
                 switch (myChoice)
                 {
                     case "rock":

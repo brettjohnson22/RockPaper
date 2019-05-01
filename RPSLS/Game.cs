@@ -29,7 +29,7 @@ namespace RPSLS
             {
                 RunBattle();
             }
-            while (playerOne.playerScore > 2 && playerTwo.playerScore > 2);
+            while (firstPlayer.playerScore < 2 && secondPlayer.playerScore < 2);
 
         }
         //member methods (CAN DO)
