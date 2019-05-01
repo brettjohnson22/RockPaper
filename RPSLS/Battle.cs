@@ -15,9 +15,13 @@ namespace RPSLS
         string gesture2;
 
         //constructor (SPAWNER)
-        public Battle()
+        public Battle(Player firstPlayer, Player secondPlayer)
         {
+            this.firstPlayer = firstPlayer;
+            this.secondPlayer = secondPlayer;
 
+            PromptGestures();
+            JudgeGestures();
         }
         //member methods (CAN DO)
         //Compare two gestures and determine a winner.
@@ -27,72 +31,81 @@ namespace RPSLS
 
         public void PromptGestures()
         {
-            Console.WriteLine($"{firstPlayer.name} please enter your gesture: rock/paper/scissors/lizard/spock");
-            gesture1 = Console.ReadLine();
-            Console.WriteLine($"{secondPlayer.name} please enter your gesture: rock/paper/scissors/lizard/spock);
+            gesture1 = firstPlayer.chooseGesture();
+            gesture2 = secondPlayer.chooseGesture();
         }
 
-        //public judgeGestures()
-        //{
-        //    if (gesture1 == gesture2)
-        //    {
-        //        //reprompt
-        //    }
-        //    else if (gesture1 == rock)
-        //    {
-        //        if (gesture2 == scissors || gesture2 == lizard)
-        //        {
-        //            playerOne wins;
-        //        }
-        //        else
-        //        {
-        //            playerTwo wins;
-        //        }
-        //    }
-        //    else if (gesture1 == paper)
-        //    {
-        //        if (gesture2 == rock || gesture2 == spock)
-        //        {
-        //            playerOne wins;
-        //        }
-        //        else
-        //        {
-        //            playerTwo wins;
-        //        }
-        //    }
-        //    else if (gesture1 == scissors)
-        //    {
-        //        if (gesture2 == paper || gesture2 == lizard)
-        //        {
-        //            playerOne wins;
-        //        }
-        //        else
-        //        {
-        //            playerTwo wins;
-        //        }
-        //    }
-        //    else if (gesture1 == lizard)
-        //    {
-        //        if (gesture2 == paper || gesture2 == spock)
-        //        {
-        //            playerOne wins;
-        //        }
-        //        else
-        //        {
-        //            playerTwo wins;
-        //        }
-        //    }
-        //    else if (gesture1 == spock)
-        //    {
-        //        if (gesture2 == scissors || gesture2 == rock)
-        //        {
-        //            playerOne wins;
-        //        }
-        //        else
-        //        {
-        //            playerTwo wins;
-        //        }
-        //    }
-        //}
+        public void JudgeGestures()
+        {
+            if (gesture1 == gesture2)
+            {
+                //reprompt
+            }
+            else if (gesture1 == "rock")
+            {
+                if (gesture2 == "scissors" || gesture2 == "lizard")
+                {
+                    Console.WriteLine($"{firstPlayer.name} wins!");
+                    firstPlayer.playerScore++;
+                }
+                else
+                {
+                    Console.WriteLine($"{secondPlayer.name} wins!");
+                    secondPlayer.playerScore++;
+                }
+            }
+            else if (gesture1 == "paper")
+            {
+                if (gesture2 == "rock" || gesture2 == "spock")
+                {
+                    Console.WriteLine($"{firstPlayer.name} wins!");
+                    firstPlayer.playerScore++;
+                }
+                else
+                {
+                    Console.WriteLine($"{secondPlayer.name} wins!");
+                    secondPlayer.playerScore++;
+                }
+            }
+            else if (gesture1 == "scissors")
+            {
+                if (gesture2 == "paper" || gesture2 == "lizard")
+                {
+                    Console.WriteLine($"{firstPlayer.name} wins!");
+                    firstPlayer.playerScore++;
+                }
+                else
+                {
+                    Console.WriteLine($"{secondPlayer.name} wins!");
+                    secondPlayer.playerScore++;
+                }
+            }
+            else if (gesture1 == "lizard")
+            {
+                if (gesture2 == "paper" || gesture2 == "spock")
+                {
+                    Console.WriteLine($"{firstPlayer.name} wins!");
+                    firstPlayer.playerScore++;
+                }
+                else
+                {
+                    Console.WriteLine($"{secondPlayer.name} wins!");
+                    secondPlayer.playerScore++;
+                }
+            }
+            else if (gesture1 == "spock")
+            {
+                if (gesture2 == "scissors" || gesture2 == "rock")
+                {
+                    Console.WriteLine($"{firstPlayer.name} wins!");
+                    firstPlayer.playerScore++;
+                }
+                else
+                {
+                    Console.WriteLine($"{secondPlayer.name} wins!");
+                    secondPlayer.playerScore++;
+                }
+            }
+        }
     }
 }

@@ -67,7 +67,6 @@ namespace RPSLS
                 firstPlayer = playerOne;
                 secondPlayer = playerTwo;
                 Console.WriteLine($"{playerOne.name} goes first!");
-                Console.ReadLine();
             }
             else
             {
@@ -75,13 +74,12 @@ namespace RPSLS
                 firstPlayer = playerTwo;
                 secondPlayer = playerOne;
                 Console.WriteLine($"{playerTwo.name} goes first!");
-                Console.ReadLine();
             }
         }
 
         public void RunBattle()
         {
-            Battle roundOne = new Battle();
+            Battle roundOne = new Battle(firstPlayer, secondPlayer);
         }
 
         public void GameOver()

@@ -10,7 +10,7 @@ namespace RPSLS
     {
         //member variables (HAS A)
         //list of gestures.
-        
+
         //constructor (SPAWNER)
         public AI()
         {
@@ -18,6 +18,11 @@ namespace RPSLS
         }
         //member methods (CAN DO)
         //Choose a gesture at random from a list of possible gestures.
+        public override string chooseGesture()
+        {
+            throw new NotImplementedException();
+        }
+
     }
 
 }
