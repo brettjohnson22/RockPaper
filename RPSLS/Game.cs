@@ -73,7 +73,6 @@ namespace RPSLS
             }
             else
             {
-                playerTwo.goingFirst = true;
                 Console.WriteLine($"{playerTwo.name} goes first!");
             }
         }
