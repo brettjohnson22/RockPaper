@@ -11,9 +11,6 @@ namespace RPSLS
         //member variables (HAS A)
         public Player playerWhoGoesFirst;
         public Player playerWhoGoesSecond;
-        // TODO: Remove in favor of player member vars
-        //public string gesture1;
-        //public string playerWhoGoesSecondmyChoice;
 
         //constructor (SPAWNER)
         public Battle(Player playerWhoGoesFirst, Player playerWhoGoesSecond)

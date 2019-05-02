@@ -24,7 +24,7 @@ namespace RPSLS
         {
             bool validChoice = false;
             int numberOfUsers = -1;
-            while (validChoice == false)
+            while (!validChoice)
             {
                 Console.WriteLine("How Many People Are playing? Type '1' or '2'.");
                 numberOfUsers = Convert.ToInt32(Console.ReadLine());
@@ -95,7 +95,7 @@ namespace RPSLS
                 Console.WriteLine($"{playerOne.name} is the winner!");
                 Console.ReadLine();
             }
-            else if(playerTwo.playerScore > playerOne.playerScore)
+            else
             {
                 Console.WriteLine($"{playerTwo.name} is the winner!");
                 Console.ReadLine();
