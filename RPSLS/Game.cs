@@ -22,6 +22,7 @@ namespace RPSLS
         //constructor (SPAWNER)
         public Game()
         {
+            Console.WriteLine("Welcome to Rock Paper Scissors Lizard Spock! By Brett Johnson");
             numberOfUsers = DetermineNumberOfUsers();
             CreatePlayers();
             ChooseWhoGoesFirst();
