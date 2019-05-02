@@ -10,12 +10,11 @@ namespace RPSLS
     {
         static void Main(string[] args)
         {
-            Game game = new Game();
+            new Game();
         }
     }
 }
 //Game should greet the user and ask how many players.
-//Readline after every display, even if AI player is doing something.
 //If one player, create AI player then start game
 //If two players, prompt for P1 name, then P2 name.
 //Player can be an abstract class, userplayer and AIplayer can be subclasses.
@@ -24,7 +23,6 @@ namespace RPSLS
 //Each game will be up to 3 battles.
 //Prompt players to discreetly enter their choice.
 //Choice comes from a list of gestures
-//Gesture can be an abstract class, each type of gesture can be a child class.
 //**Resolve battle.
 //This will be judging player 1's gesture against player 2's gesture and then determining winner.
 //So can the actual resolve be an if-else if nested within player 1's gesture type that will plug in player 2's input?

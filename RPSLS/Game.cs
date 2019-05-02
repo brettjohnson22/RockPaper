@@ -13,12 +13,10 @@ namespace RPSLS
         public User playerOne;
         public Player playerTwo;
         public string nameInput;
-        public Battle roundOne;
-        public Player firstPlayer;
-        public Player secondPlayer;
+        public Battle roundOfPlay;
+        public Player playerWhoGoesFirst;
+        public Player playerWhoGoesSecond;
         
-
-
         //constructor (SPAWNER)
         public Game()
         {
@@ -29,12 +27,12 @@ namespace RPSLS
             do
             {
                 RunBattle();
-                Console.WriteLine($"{firstPlayer.name}: {firstPlayer.playerScore}. {secondPlayer.name}: {secondPlayer.playerScore}");
+                Console.WriteLine($"{playerWhoGoesFirst.name}: {playerWhoGoesFirst.playerScore}. {playerWhoGoesSecond.name}: {playerWhoGoesSecond.playerScore}");
             }
-            while (firstPlayer.playerScore < 2 && secondPlayer.playerScore < 2);
+            while (playerWhoGoesFirst.playerScore < 2 && playerWhoGoesSecond.playerScore < 2);
             GameOver();
-
         }
+
         //member methods (CAN DO)
         public int DetermineNumberOfUsers()
         {
@@ -42,7 +40,6 @@ namespace RPSLS
             numberOfUsers = Convert.ToInt32(Console.ReadLine());
             return numberOfUsers;
         }
-
         public void CreatePlayers()
         {
             Console.WriteLine("What is Player One's Name?");
@@ -51,6 +48,7 @@ namespace RPSLS
             if (numberOfUsers == 1)
             {
                 playerTwo = new AI();
+                Console.WriteLine($"{playerOne.name}, you are playing against {playerTwo.name}, an AI.");
             }
             else
             {
@@ -59,45 +57,44 @@ namespace RPSLS
                 playerTwo = new User(nameInput);
             }
         }
-
         public void ChooseWhoGoesFirst()
         {
             Random rand = new Random();
             int whoGoesFirst = rand.Next(2);
             if (whoGoesFirst == 0)
             {
-                //PlayerOne goes first
-                firstPlayer = playerOne;
-                secondPlayer = playerTwo;
+                playerWhoGoesFirst = playerOne;
+                playerWhoGoesSecond = playerTwo;
                 Console.WriteLine($"{playerOne.name} goes first!");
             }
             else
             {
-                //PlayerTwo goes first
-                firstPlayer = playerTwo;
-                secondPlayer = playerOne;
+                playerWhoGoesFirst = playerTwo;
+                playerWhoGoesSecond = playerOne;
                 Console.WriteLine($"{playerTwo.name} goes first!");
             }
         }
-
         public void RunBattle()
         {
-            roundOne = new Battle(firstPlayer, secondPlayer);
+            roundOfPlay = new Battle(playerWhoGoesFirst, playerWhoGoesSecond);
         }
-
         public void GameOver()
         {
-            if(playerOne.playerScore == 2)
+            if(playerWhoGoesFirst.playerScore > playerWhoGoesSecond.playerScore)
             {
-                Console.WriteLine($"{playerOne.name} is the winner!");
+                Console.WriteLine($"{playerWhoGoesFirst.name} is the winner!");
                 Console.ReadLine();
             }
-            else if(playerTwo.playerScore == 2)
+            else if(playerWhoGoesSecond.playerScore > playerWhoGoesFirst.playerScore)
             {
-                Console.WriteLine($"{playerTwo.name} is the winner!");
+                Console.WriteLine($"{playerWhoGoesSecond.name} is the winner!");
+                Console.ReadLine();
+            }
+            else
+            {
+                Console.WriteLine("Something else happened.");
                 Console.ReadLine();
             }
         }
-
     }
 }

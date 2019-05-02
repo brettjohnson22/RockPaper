@@ -9,8 +9,8 @@ namespace RPSLS
     public class AI : Player
     {
         //member variables (HAS A)
-        //list of gestures.
-        List<string> gestures;
+        public List<string> gestures;
+
         //constructor (SPAWNER)
         public AI()
         {
@@ -18,7 +18,6 @@ namespace RPSLS
             this.name = "EDI";
         }
         //member methods (CAN DO)
-        //Choose a gesture at random from a list of possible gestures.
         public override string ChooseGesture()
         {
             Random rand = new Random();

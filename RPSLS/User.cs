@@ -16,7 +16,6 @@ namespace RPSLS
             this.name = name;
         }
         //member methods (CAN DO)
-        //Choose a gesture from user prompt.
         public override string ChooseGesture()
         {
             validChoice = false;
