@@ -11,8 +11,9 @@ namespace RPSLS
         //member variables (HAS A)
         public Player playerWhoGoesFirst;
         public Player playerWhoGoesSecond;
-        public string gesture1;
-        public string gesture2;
+        // TODO: Remove in favor of player member vars
+        //public string gesture1;
+        //public string playerWhoGoesSecondmyChoice;
 
         //constructor (SPAWNER)
         public Battle(Player playerWhoGoesFirst, Player playerWhoGoesSecond)
@@ -26,78 +27,78 @@ namespace RPSLS
         //member methods (CAN DO)
         public void PromptGestures()
         {
-            gesture1 = playerWhoGoesFirst.ChooseGesture();
-            gesture2 = playerWhoGoesSecond.ChooseGesture();
+            playerWhoGoesFirst.ChooseGesture();
+            playerWhoGoesSecond.ChooseGesture();
         }
 
         public void JudgeGestures()
         {
-            if (gesture1 == gesture2)
+            if (playerWhoGoesFirst.myChoice == playerWhoGoesSecond.myChoice)
             {
                 Console.WriteLine("Tied! Try again!");
             }
-            else if (gesture1 == "rock")
+            else if (playerWhoGoesFirst.myChoice == "rock")
             {
-                if (gesture2 == "scissors" || gesture2 == "lizard")
+                if (playerWhoGoesSecond.myChoice == "scissors" || playerWhoGoesSecond.myChoice == "lizard")
                 {
-                    Console.WriteLine($"{gesture1} beats {gesture2}. {playerWhoGoesFirst.name} wins the round!");
+                    Console.WriteLine($"{playerWhoGoesFirst.myChoice} beats {playerWhoGoesSecond.myChoice}. {playerWhoGoesFirst.name} wins the round!");
                     playerWhoGoesFirst.playerScore++;
                 }
                 else
                 {
-                    Console.WriteLine($"{gesture2} beats {gesture1}. {playerWhoGoesSecond.name} wins the round!");
+                    Console.WriteLine($"{playerWhoGoesSecond.myChoice} beats {playerWhoGoesFirst.myChoice}. {playerWhoGoesSecond.name} wins the round!");
                     playerWhoGoesSecond.playerScore++;
                 }
             }
-            else if (gesture1 == "paper")
+            else if (playerWhoGoesFirst.myChoice == "paper")
             {
-                if (gesture2 == "rock" || gesture2 == "spock")
+                if (playerWhoGoesSecond.myChoice == "rock" || playerWhoGoesSecond.myChoice == "spock")
                 {
-                    Console.WriteLine($"{gesture1} beats {gesture2}. {playerWhoGoesFirst.name} wins the round!");
+                    Console.WriteLine($"{playerWhoGoesFirst.myChoice} beats {playerWhoGoesSecond.myChoice}. {playerWhoGoesFirst.name} wins the round!");
                     playerWhoGoesFirst.playerScore++;
                 }
                 else
                 {
-                    Console.WriteLine($"{gesture2} beats {gesture1}. {playerWhoGoesSecond.name} wins the round!");
+                    Console.WriteLine($"{playerWhoGoesSecond.myChoice} beats {playerWhoGoesFirst.myChoice}. {playerWhoGoesSecond.name} wins the round!");
                     playerWhoGoesSecond.playerScore++;
                 }
             }
-            else if (gesture1 == "scissors")
+            else if (playerWhoGoesFirst.myChoice == "scissors")
             {
-                if (gesture2 == "paper" || gesture2 == "lizard")
+                if (playerWhoGoesSecond.myChoice == "paper" || playerWhoGoesSecond.myChoice == "lizard")
                 {
-                    Console.WriteLine($"{gesture1} beats {gesture2}. {playerWhoGoesFirst.name} wins the round!");
+                    Console.WriteLine($"{playerWhoGoesFirst.myChoice} beats {playerWhoGoesSecond.myChoice}. {playerWhoGoesFirst.name} wins the round!");
                     playerWhoGoesFirst.playerScore++;
                 }
                 else
                 {
-                    Console.WriteLine($"{gesture2} beats {gesture1}. {playerWhoGoesSecond.name} wins the round!");
+                    Console.WriteLine($"{playerWhoGoesSecond.myChoice} beats {playerWhoGoesFirst.myChoice}. {playerWhoGoesSecond.name} wins the round!");
                     playerWhoGoesSecond.playerScore++;
                 }
             }
-            else if (gesture1 == "lizard")
+            else if (playerWhoGoesFirst.myChoice == "lizard")
             {
-                if (gesture2 == "paper" || gesture2 == "spock")
+                if (playerWhoGoesSecond.myChoice == "paper" || playerWhoGoesSecond.myChoice == "spock")
                 {
-                    Console.WriteLine($"{gesture1} beats {gesture2}. {playerWhoGoesFirst.name} wins the round!");
+                    Console.WriteLine($"{playerWhoGoesFirst.myChoice} beats {playerWhoGoesSecond.myChoice}. {playerWhoGoesFirst.name} wins the round!");
                     playerWhoGoesFirst.playerScore++;
                 }
                 else
                 {
-                    Console.WriteLine($"{gesture2} beats {gesture1}. {playerWhoGoesSecond.name} wins the round!");
+                    Console.WriteLine($"{playerWhoGoesSecond.myChoice} beats {playerWhoGoesFirst.myChoice}. {playerWhoGoesSecond.name} wins the round!");
                     playerWhoGoesSecond.playerScore++;
                 }
             }
-            else if (gesture1 == "spock")
+            else if (playerWhoGoesFirst.myChoice == "spock")
             {
-                if (gesture2 == "scissors" || gesture2 == "rock")
+                if (playerWhoGoesSecond.myChoice == "scissors" || playerWhoGoesSecond.myChoice == "rock")
                 {
-                    Console.WriteLine($"{gesture1} beats {gesture2}. {playerWhoGoesFirst.name} wins the round!");
+                    Console.WriteLine($"{playerWhoGoesFirst.myChoice} beats {playerWhoGoesSecond.myChoice}. {playerWhoGoesFirst.name} wins the round!");
                     playerWhoGoesFirst.playerScore++;
                 }
                 else
                 {
-                    Console.WriteLine($"{gesture2} beats {gesture1}. {playerWhoGoesSecond.name} wins the round!");
+                    Console.WriteLine($"{playerWhoGoesSecond.myChoice} beats {playerWhoGoesFirst.myChoice}. {playerWhoGoesSecond.name} wins the round!");
                     playerWhoGoesSecond.playerScore++;
                 }
             }

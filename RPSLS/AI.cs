@@ -24,7 +24,6 @@ namespace RPSLS
             int gestureChoiceIndex = rand.Next(5);
             myChoice = gestures[gestureChoiceIndex];
             return myChoice;
-            //throw new NotImplementedException();
         }
 
     }

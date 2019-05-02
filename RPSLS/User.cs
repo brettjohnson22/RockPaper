@@ -9,7 +9,7 @@ namespace RPSLS
     public class User : Player
     {
         //member variables (HAS A)
-        public bool validChoice;
+        
         //constructor (SPAWNER)
         public User(string name)
         {
@@ -18,8 +18,8 @@ namespace RPSLS
         //member methods (CAN DO)
         public override string ChooseGesture()
         {
-            validChoice = false;
-            while (validChoice == false)
+            bool validChoice = false;
+            while (!validChoice)
             { 
                 Console.WriteLine($"{name}, choose a gesture: rock/paper/scissors/lizard/spock");
                 Console.ForegroundColor = ConsoleColor.Black;

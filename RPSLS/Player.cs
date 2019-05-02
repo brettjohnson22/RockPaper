@@ -12,11 +12,13 @@ namespace RPSLS
         public string name;
         public string myChoice;
         public int playerScore;
+        public bool goingFirst;
 
         //constructor (SPAWNER)
         public Player()
         {
             playerScore = 0;
+            goingFirst = false;
         }
         //member methods (CAN DO)
         public abstract string ChooseGesture();

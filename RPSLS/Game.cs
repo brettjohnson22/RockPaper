@@ -9,39 +9,43 @@ namespace RPSLS
     public class Game
     {
         //member variables (HAS A)
-        public int numberOfUsers;
-        public User playerOne;
+        public Player playerOne;
         public Player playerTwo;
-        public string nameInput;
         public Battle roundOfPlay;
-        public Player playerWhoGoesFirst;
-        public Player playerWhoGoesSecond;
         
         //constructor (SPAWNER)
         public Game()
         {
             Console.WriteLine("Welcome to Rock Paper Scissors Lizard Spock! By Brett Johnson");
-            numberOfUsers = DetermineNumberOfUsers();
-            CreatePlayers();
-            ChooseWhoGoesFirst();
-            do
-            {
-                RunBattle();
-                Console.WriteLine($"{playerWhoGoesFirst.name}: {playerWhoGoesFirst.playerScore}. {playerWhoGoesSecond.name}: {playerWhoGoesSecond.playerScore}");
-            }
-            while (playerWhoGoesFirst.playerScore < 2 && playerWhoGoesSecond.playerScore < 2);
-            GameOver();
         }
 
         //member methods (CAN DO)
         public int DetermineNumberOfUsers()
         {
-            Console.WriteLine("How Many People Are playing? Type '1' or '2'.");
-            numberOfUsers = Convert.ToInt32(Console.ReadLine());
+            bool validChoice = false;
+            int numberOfUsers = -1;
+            while (validChoice == false)
+            {
+                Console.WriteLine("How Many People Are playing? Type '1' or '2'.");
+                numberOfUsers = Convert.ToInt32(Console.ReadLine());
+                switch (numberOfUsers)
+                {
+                    case 1:
+                        validChoice = true;
+                        break;
+                    case 2:
+                        validChoice = true;
+                        break;
+                    default:
+                        Console.WriteLine("Sorry, I can't handle that number of players. Try again.");
+                        break;
+                }
+            }
             return numberOfUsers;
         }
-        public void CreatePlayers()
+        public void CreatePlayers(int numberOfUsers)
         {
+            string nameInput;
             Console.WriteLine("What is Player One's Name?");
             nameInput = Console.ReadLine();
             playerOne = new User(nameInput);
@@ -59,42 +63,57 @@ namespace RPSLS
         }
         public void ChooseWhoGoesFirst()
         {
+            Console.WriteLine("Flipping coin to see who goes first...");
             Random rand = new Random();
             int whoGoesFirst = rand.Next(2);
             if (whoGoesFirst == 0)
             {
-                playerWhoGoesFirst = playerOne;
-                playerWhoGoesSecond = playerTwo;
+                playerOne.goingFirst = true;
                 Console.WriteLine($"{playerOne.name} goes first!");
             }
             else
             {
-                playerWhoGoesFirst = playerTwo;
-                playerWhoGoesSecond = playerOne;
+                playerTwo.goingFirst = true;
                 Console.WriteLine($"{playerTwo.name} goes first!");
             }
         }
         public void RunBattle()
         {
-            roundOfPlay = new Battle(playerWhoGoesFirst, playerWhoGoesSecond);
-        }
-        public void GameOver()
-        {
-            if(playerWhoGoesFirst.playerScore > playerWhoGoesSecond.playerScore)
+            if (playerOne.goingFirst == true)
             {
-                Console.WriteLine($"{playerWhoGoesFirst.name} is the winner!");
-                Console.ReadLine();
-            }
-            else if(playerWhoGoesSecond.playerScore > playerWhoGoesFirst.playerScore)
-            {
-                Console.WriteLine($"{playerWhoGoesSecond.name} is the winner!");
-                Console.ReadLine();
+                roundOfPlay = new Battle(playerOne, playerTwo);
             }
             else
             {
-                Console.WriteLine("Something else happened.");
+                roundOfPlay = new Battle(playerTwo, playerOne);
+            }
+        }
+        public void GameOver()
+        {
+            if(playerOne.playerScore > playerTwo.playerScore)
+            {
+                Console.WriteLine($"{playerOne.name} is the winner!");
+                Console.ReadLine();
+            }
+            else if(playerTwo.playerScore > playerOne.playerScore)
+            {
+                Console.WriteLine($"{playerTwo.name} is the winner!");
                 Console.ReadLine();
             }
         }
+        public void RunGame()
+        {
+            int numOfUsers = DetermineNumberOfUsers();
+            CreatePlayers(numOfUsers);
+            ChooseWhoGoesFirst();
+            do
+            {
+                RunBattle();
+                Console.WriteLine($"{playerOne.name}: {playerOne.playerScore}. {playerTwo.name}: {playerTwo.playerScore}");
+            }
+            while (playerOne.playerScore < 2 && playerTwo.playerScore < 2);
+            GameOver();
+        }
+
     }
 }

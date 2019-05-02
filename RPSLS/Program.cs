@@ -10,7 +10,9 @@ namespace RPSLS
     {
         static void Main(string[] args)
         {
-            new Game();
+            Game game = new Game();
+            game.RunGame();
+
         }
     }
 }
