@@ -34,70 +34,37 @@ namespace RPSLS
             {
                 Console.WriteLine("Tied! Try again!");
             }
-            else if (playerWhoGoesFirst.myChoice == "rock")
+            else if (playerWhoGoesFirst.myChoice == "rock" && (playerWhoGoesSecond.myChoice == "scissors" || playerWhoGoesSecond.myChoice == "lizard"))
             {
-                if (playerWhoGoesSecond.myChoice == "scissors" || playerWhoGoesSecond.myChoice == "lizard")
-                {
-                    Console.WriteLine($"{playerWhoGoesFirst.myChoice} beats {playerWhoGoesSecond.myChoice}. {playerWhoGoesFirst.name} wins the round!");
-                    playerWhoGoesFirst.playerScore++;
-                }
-                else
-                {
-                    Console.WriteLine($"{playerWhoGoesSecond.myChoice} beats {playerWhoGoesFirst.myChoice}. {playerWhoGoesSecond.name} wins the round!");
-                    playerWhoGoesSecond.playerScore++;
-                }
+                Console.WriteLine($"{playerWhoGoesFirst.myChoice} beats {playerWhoGoesSecond.myChoice}. {playerWhoGoesFirst.name} wins the round!");
+                playerWhoGoesFirst.playerScore++;
             }
-            else if (playerWhoGoesFirst.myChoice == "paper")
+            else if (playerWhoGoesFirst.myChoice == "paper" && (playerWhoGoesSecond.myChoice == "rock" || playerWhoGoesSecond.myChoice == "spock"))
             {
-                if (playerWhoGoesSecond.myChoice == "rock" || playerWhoGoesSecond.myChoice == "spock")
-                {
-                    Console.WriteLine($"{playerWhoGoesFirst.myChoice} beats {playerWhoGoesSecond.myChoice}. {playerWhoGoesFirst.name} wins the round!");
-                    playerWhoGoesFirst.playerScore++;
-                }
-                else
-                {
-                    Console.WriteLine($"{playerWhoGoesSecond.myChoice} beats {playerWhoGoesFirst.myChoice}. {playerWhoGoesSecond.name} wins the round!");
-                    playerWhoGoesSecond.playerScore++;
-                }
+                Console.WriteLine($"{playerWhoGoesFirst.myChoice} beats {playerWhoGoesSecond.myChoice}. {playerWhoGoesFirst.name} wins the round!");
+                playerWhoGoesFirst.playerScore++;
+
             }
-            else if (playerWhoGoesFirst.myChoice == "scissors")
+            else if (playerWhoGoesFirst.myChoice == "scissors" && (playerWhoGoesSecond.myChoice == "paper" || playerWhoGoesSecond.myChoice == "lizard"))
             {
-                if (playerWhoGoesSecond.myChoice == "paper" || playerWhoGoesSecond.myChoice == "lizard")
-                {
-                    Console.WriteLine($"{playerWhoGoesFirst.myChoice} beats {playerWhoGoesSecond.myChoice}. {playerWhoGoesFirst.name} wins the round!");
-                    playerWhoGoesFirst.playerScore++;
-                }
-                else
-                {
-                    Console.WriteLine($"{playerWhoGoesSecond.myChoice} beats {playerWhoGoesFirst.myChoice}. {playerWhoGoesSecond.name} wins the round!");
-                    playerWhoGoesSecond.playerScore++;
-                }
+
+                Console.WriteLine($"{playerWhoGoesFirst.myChoice} beats {playerWhoGoesSecond.myChoice}. {playerWhoGoesFirst.name} wins the round!");
+                playerWhoGoesFirst.playerScore++;
             }
-            else if (playerWhoGoesFirst.myChoice == "lizard")
+            else if (playerWhoGoesFirst.myChoice == "lizard" && (playerWhoGoesSecond.myChoice == "paper" || playerWhoGoesSecond.myChoice == "spock"))
             {
-                if (playerWhoGoesSecond.myChoice == "paper" || playerWhoGoesSecond.myChoice == "spock")
-                {
-                    Console.WriteLine($"{playerWhoGoesFirst.myChoice} beats {playerWhoGoesSecond.myChoice}. {playerWhoGoesFirst.name} wins the round!");
-                    playerWhoGoesFirst.playerScore++;
-                }
-                else
-                {
-                    Console.WriteLine($"{playerWhoGoesSecond.myChoice} beats {playerWhoGoesFirst.myChoice}. {playerWhoGoesSecond.name} wins the round!");
-                    playerWhoGoesSecond.playerScore++;
-                }
+                Console.WriteLine($"{playerWhoGoesFirst.myChoice} beats {playerWhoGoesSecond.myChoice}. {playerWhoGoesFirst.name} wins the round!");
+                playerWhoGoesFirst.playerScore++;
             }
-            else if (playerWhoGoesFirst.myChoice == "spock")
+            else if (playerWhoGoesFirst.myChoice == "spock" && (playerWhoGoesSecond.myChoice == "scissors" || playerWhoGoesSecond.myChoice == "rock"))
             {
-                if (playerWhoGoesSecond.myChoice == "scissors" || playerWhoGoesSecond.myChoice == "rock")
-                {
-                    Console.WriteLine($"{playerWhoGoesFirst.myChoice} beats {playerWhoGoesSecond.myChoice}. {playerWhoGoesFirst.name} wins the round!");
-                    playerWhoGoesFirst.playerScore++;
-                }
-                else
-                {
-                    Console.WriteLine($"{playerWhoGoesSecond.myChoice} beats {playerWhoGoesFirst.myChoice}. {playerWhoGoesSecond.name} wins the round!");
-                    playerWhoGoesSecond.playerScore++;
-                }
+                Console.WriteLine($"{playerWhoGoesFirst.myChoice} beats {playerWhoGoesSecond.myChoice}. {playerWhoGoesFirst.name} wins the round!");
+                playerWhoGoesFirst.playerScore++;
+            }
+            else
+            {
+                Console.WriteLine($"{playerWhoGoesSecond.myChoice} beats {playerWhoGoesFirst.myChoice}. {playerWhoGoesSecond.name} wins the round!");
+                playerWhoGoesSecond.playerScore++;
             }
         }
     }
